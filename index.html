@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>By ziper mods</title>
+<title>By ziperr_mods</title>
 
 <style>
-*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#0f0f1a;
   color:#fff;
-  zoom:1.1;
+  zoom:1.15;
 }
 
 header{
@@ -23,36 +22,50 @@ header{
   font-weight:bold;
 }
 
-.top-image{text-align:center;padding:10px}
+/* ===== GAMBAR ATAS ===== */
+.top-image{
+  text-align:center;
+  padding:10px;
+}
+
 .top-image img{
   width:300px;
   max-width:90%;
   border-radius:20px;
-  box-shadow:0 0 15px rgba(155,108,255,.6);
+  box-shadow:0 0 15px rgba(155,108,255,0.6);
 }
 
+/* ===== TEKS BERJALAN ===== */
 .marquee{
-  background:#1b1b33;
+  width:100%;
   overflow:hidden;
+  background:#1b1b33;
   border-top:1px solid #2a2a55;
   border-bottom:1px solid #2a2a55;
 }
+
 .marquee span{
   display:inline-block;
-  padding-left:100%;
   white-space:nowrap;
-  animation:run 15s linear infinite;
-  font-size:18px;
+  padding-left:100%;
+  animation:jalan 15s linear infinite;
+  font-size:20px;
   color:#9b6cff;
 }
-@keyframes run{to{transform:translateX(-100%)}}
+
+@keyframes jalan{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-100%); }
+}
 
 nav{
   display:flex;
+  flex-wrap:wrap;
   justify-content:center;
   gap:10px;
   padding:15px;
 }
+
 nav a{
   padding:10px 16px;
   background:#9b6cff;
@@ -62,22 +75,39 @@ nav a{
 }
 
 .section{
-  margin:15px;
   padding:20px;
+  margin:15px;
   background:#1b1b33;
   border-radius:15px;
 }
 
-/* search */
-#search{
-  width:100%;
-  padding:12px;
+.downloads a{
+  display:block;
+  margin:6px 0;
+  padding:10px;
+  background:#2a2a55;
   border-radius:10px;
-  border:none;
-  margin-bottom:15px;
+  text-decoration:none;
+  color:#fff;
 }
 
-/* app card */
+.vip-only{
+  background:#402060;
+}
+
+input,button{
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  margin-top:8px;
+}
+
+button{
+  background:#9b6cff;
+  color:#fff;
+}
+
+/* ===== TAMBAHAN APP CARD ===== */
 .app-card{
   background:#eef2ff;
   border-radius:18px;
@@ -93,12 +123,26 @@ nav a{
   height:55px;
   border-radius:12px;
   margin-right:14px;
+  object-fit:cover;
 }
 
-.app-info{flex:1}
-.app-title{font-size:17px;font-weight:bold}
-.app-desc{font-size:13px;color:#444}
-.app-rating{font-size:13px;color:#f4b400;margin-top:5px}
+.app-info{ flex:1; }
+
+.app-title{
+  font-size:17px;
+  font-weight:bold;
+}
+
+.app-desc{
+  font-size:13px;
+  color:#444;
+}
+
+.app-rating{
+  font-size:13px;
+  color:#f4b400;
+  margin-top:5px;
+}
 
 .expand-btn{
   width:38px;
@@ -109,10 +153,15 @@ nav a{
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:20px;
   cursor:pointer;
 }
 
-.download-box{display:none;margin-top:10px}
+.download-box{
+  display:none;
+  margin-top:10px;
+}
+
 .download-box a{
   display:block;
   background:#111827;
@@ -121,37 +170,24 @@ nav a{
   padding:8px;
   border-radius:8px;
   margin-top:6px;
-}
-
-/* featured */
-.featured{
-  flex-direction:column;
-  align-items:flex-start;
-  background:linear-gradient(135deg,#9b6cff,#5b21b6);
-  color:#fff;
-}
-.featured .app-desc{color:#e0e0ff}
-.featured .download-box{width:100%}
-
-footer{
-  text-align:center;
-  font-size:13px;
-  padding:15px;
-  opacity:.6;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<header>By ziper mods</header>
+
+<header>{By ziper mods}</header>
 
 <div class="top-image">
   <img src="gambar.jpg">
 </div>
 
 <div class="marquee">
-  <span>selamat datang di website resmi ziper • update rutin • educational project</span>
+  <span>
+    selamat datang di website resmi ziper, peringatan web ini pasti ada update jangan lupa folow saluran ziperr
+  </span>
 </div>
 
 <nav>
@@ -159,56 +195,49 @@ footer{
   <a href="#download">Download</a>
 </nav>
 
+
 <div id="home" class="section">
-  <h2>mods by ziper</h2>
-  <a href="https://lynk.id/_ziperr_" style="color:#9b6cff">SALURAN ZIPER</a>
+  <h2>mods by ziperr</h2>
+  <a href="https://lynk.id/_ziperr_">SALURAN ZIPER</a>
 </div>
 
-<div id="download" class="section">
+
+
+
+<div id="download" class="section downloads">
   <h2>Download APK MOD</h2>
 
-  <input id="search" type="text" placeholder="Cari APK...">
 
-  <!-- FEATURED APP -->
-  <div class="app-card featured">
-    <div style="display:flex;align-items:center;width:100%">
-      <img src="1.png" class="app-icon">
-      <div class="app-info">
-        <div class="app-title">WINKIT (RECOMMENDED)</div>
-        <div class="app-desc">hd in foto jadi 8k🗿</div>
-        <div class="app-rating">⭐⭐⭐⭐☆ 4.5 • Tools</div>
-      </div>
-      <div class="expand-btn">⌃</div>
-    </div>
-    <div class="download-box">
-      <a href="https://sfl.gl/BCDIY">Download APK</a>
-    </div>
-  </div>
-
-  <div class="app-card featured">
-    <div style="display:flex;align-items:center;width:100%">
-      <img src="16.png" class="app-icon">
-      <div class="app-info">
-        <div class="app-title">ULTRA MOTION (RECOMMENDED)</div>
-        <div class="app-desc">Aplikasi buat ngedit</div>
-        <div class="app-rating">⭐⭐⭐⭐☆ 4.5 • Tools</div>
-      </div>
-      <div class="expand-btn">⌃</div>
-    </div>
-    <div class="download-box">
-      <a href="https://sfl.gl/msUrkTfA">Download APK</a>
-    </div>
-  </div>
+  <hr>
   
-  <!-- APP BIASA (lanjutkan app lu yang lain DI BAWAH INI, TIDAK DIUBAH) -->
+</style>
+</head>
+
+
+<body>
 
 <!-- ===== APP 1 ===== -->
 <div class="app-card">
+  <img src="1.png" class="app-icon">
+  <div class="app-info">
+    <div class="app-title">WINKIT</div>
+    <div class="app-desc">Aplikasi untuk mengatur jaringan</div>
+    <div class="app-rating">⭐⭐⭐⭐☆ 4.5 • Tools</div>
+
+    <div class="download-box">
+      <!-- TARO LINK APK LU DI SINI -->
+      <a href="https://sfl.gl/BCDIY">Download APK1</a>
+      </div>
+  </div>
+  <div class="expand-btn">⌃</div>
+</div>
+
+<!-- ===== APP 2 ===== -->
+<div class="app-card">
   <img src="2.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">CHET SMITE</div>
-    <div class="app-desc">jadiin babu ngab
-banyak ai nya</div>
+    <div class="app-title">Acode Pro</div>
+    <div class="app-desc">chat smith</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Coding</div>
 
     <div class="download-box">
@@ -223,8 +252,8 @@ banyak ai nya</div>
 <div class="app-card">
   <img src="3.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">REMINI</div>
-    <div class="app-desc">buat ngedit poto</div>
+    <div class="app-title">AI Liberator</div>
+    <div class="app-desc">remini</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • AI</div>
 
     <div class="download-box">
@@ -239,8 +268,8 @@ banyak ai nya</div>
 <div class="app-card">
   <img src="4.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">MINECRAFT</div>
-    <div class="app-desc">main game kotak</div>
+    <div class="app-title">minecraft</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -254,8 +283,8 @@ banyak ai nya</div>
 <div class="app-card">
   <img src="5.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">CAPCUT</div>
-    <div class="app-desc">buat ngedit</div>
+    <div class="app-title">cap cut</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -270,7 +299,7 @@ banyak ai nya</div>
   <img src="6.png" class="app-icon">
   <div class="app-info">
     <div class="app-title">THE SPIKE VOLIYBALL </div>
-    <div class="app-desc">game volii</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -283,9 +312,8 @@ banyak ai nya</div>
 <div class="app-card">
   <img src="7.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">GAME BOSTER/penampil fps</div>
-    <div class="app-desc">biar hp lu kesurupan rog/iphone
-download langsung jadi </div>
+    <div class="app-title">game boster/penampil fps</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -299,8 +327,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="8.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">PICSART</div>
-    <div class="app-desc">buat ngedit</div>
+    <div class="app-title">picsart</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -314,8 +342,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="9.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">WINK</div>
-    <div class="app-desc">hb in foto ngab</div>
+    <div class="app-title">wink</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -329,8 +357,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="10.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">STRAVA</div>
-    <div class="app-desc">buat adu pace</div>
+    <div class="app-title">strava</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -344,8 +372,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="11.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">TELEGRAM</div>
-    <div class="app-desc">buat apa ya ga tau banyak</div>
+    <div class="app-title">telegram</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -358,8 +386,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="12.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">NEKOPI/KUCING HARAM🗿</div>
-    <div class="app-desc">buat nonton bokep😭🤭</div>
+    <div class="app-title">nekopoi/kucing haram</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -373,8 +401,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="13.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">MT MANAGER</div>
-    <div class="app-desc">buat nyimpen file</div>
+    <div class="app-title">mt managet</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -388,8 +416,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="14.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">FOMZ</div>
-    <div class="app-desc">biar kamera lu kaga burik🗿</div>
+    <div class="app-title">fomz</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -403,8 +431,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="15.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">SPOTFY</div>
-    <div class="app-desc">buat lagu</div>
+    <div class="app-title">spotfy</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -416,10 +444,25 @@ download langsung jadi </div>
 </div>
 
 <div class="app-card">
+  <img src="16.png" class="app-icon">
+  <div class="app-info">
+    <div class="app-title">ultra motion</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
+    <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
+
+    <div class="download-box">
+      <!-- TARO LINK APK LU DI SINI -->
+      <a href="https://sfl.gl/msUrkTfA">Download APK</a>
+    </div>
+  </div>
+  <div class="expand-btn">⌃</div>
+</div>
+
+<div class="app-card">
   <img src="17.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">FIZO NOFEL</div>
-    <div class="app-desc">buat nonton dracin</div>
+    <div class="app-title">fizo novel</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -433,8 +476,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="18.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">DOLA AI</div>
-    <div class="app-desc">buat di jadiin babu</div>
+    <div class="app-title">dola ai</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -448,8 +491,8 @@ download langsung jadi </div>
 <div class="app-card">
   <img src="19.png" class="app-icon">
   <div class="app-info">
-    <div class="app-title">DRAMA BOX</div>
-    <div class="app-desc">buat nonton drama</div>
+    <div class="app-title">drama box</div>
+    <div class="app-desc">Aplikasi untuk Mengaji</div>
     <div class="app-rating">⭐⭐⭐⭐⭐ 5.0 • Bahasa</div>
 
     <div class="download-box">
@@ -460,30 +503,15 @@ download langsung jadi </div>
   <div class="expand-btn">⌃</div>
 </div>
 
-<footer>
-© 2026 ziper mods • school project
-</footer>
-
 <script>
-// expand
 document.querySelectorAll(".expand-btn").forEach(btn=>{
-  btn.onclick=()=>{
-    const box=btn.parentElement.parentElement.querySelector(".download-box");
-    box.style.display=box.style.display==="block"?"none":"block";
-    btn.textContent=box.style.display==="block"?"⌄":"⌃";
-  }
+  btn.addEventListener("click",()=>{
+    const box = btn.parentElement.querySelector(".download-box");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+    btn.textContent = box.style.display === "block" ? "⌄" : "⌃";
+  });
 });
 
-// search
-const search=document.getElementById("search");
-const cards=document.querySelectorAll(".app-card");
-
-search.onkeyup=()=>{
-  const q=search.value.toLowerCase();
-  cards.forEach(c=>{
-    c.style.display=c.innerText.toLowerCase().includes(q)?"flex":"none";
-  });
-};
 </script>
 
 </body>
